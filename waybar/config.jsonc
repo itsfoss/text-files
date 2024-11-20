@@ -1,0 +1,66 @@
+{
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["custom/appmenu", "wlr/taskbar"],
+    "modules-center": ["hyprland/workspaces", "clock"],
+    "modules-right": ["cpu", "network"],
+    "custom/appmenu": {
+        	"format": "Menu {icon}",
+        	"format-icon": "󰻀",
+        	"rotate": 0,
+        	"on-click": "~/.config/waybar/runwofi.sh"
+    },
+    "wlr/taskbar": {
+        	"format": "{icon}",
+        	"tooltip": true,
+        	"tooltip-format": "{title}",
+        	"on-click": "activate",
+        	"on-click-middle": "close",
+        	"active-first": true
+   	 },
+     "hyprland/workspaces": {
+		"format": "{name} : {icon}",
+		"format-icons": {
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"5": "",
+			"active": "",
+			"default": ""
+    		},
+        "persistent-workspaces": {
+      		"Virtual-1": [1, 2, 3, 4, 5]
+    		}
+    },
+    "clock": {
+        	"format": "{:%I:%M %p}",
+        	"rotate": 0,
+        	"format-alt": "{  %d·%m·%y}",
+        	"tooltip-format": "<tt><small>{calendar}</small></tt>",
+        	"calendar": {
+            		"mode": "month",
+            		"format": {
+                	    "months": "<span color='#ff6699'><b>{}</b></span>",
+			    "days": "<span color='#cdd6f4'><b>{}</b></span>",
+                	    "weekdays": "<span color='#7CD37C'><b>{}</b></span>",
+                	    "today": "<span color='#ffcc66'><b>{}</b></span>"
+            	        }
+               }
+    },
+    "cpu": {
+     		"format": "{icon0} {icon1} {icon2} {icon3}",
+     		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+	},
+    "network": {
+        	"tooltip": true,
+        	"rotate": 0,
+        	"format-ethernet": " ",
+        	"tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>",
+        	"format-linked": " {ifname} (No IP)",
+        	"format-disconnected": "󰖪 ",
+        	"tooltip-format-disconnected": "Disconnected",
+        	"format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        	"interval": 2
+    	}
+    }
