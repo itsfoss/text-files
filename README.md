@@ -1,2 +1,1 @@
-# text-files
-Sample Text Files Used in the tutorials on It's FOSS and Linux Handbook
+Sample text, script and config files Used in the tutorials on It's FOSS.
